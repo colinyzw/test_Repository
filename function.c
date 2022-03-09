@@ -2,6 +2,8 @@
 
 int main()
 {
-	printf("test code....\n");
+	
+	printf("changed function.c");
+	printf("test\n");
 	return 0;
 }

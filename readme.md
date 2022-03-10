@@ -62,3 +62,15 @@ GitHub是全球最大的项目托管网站<br>大量的开源工程企业级工�
 csgo|198|1
 lol|98|2
 pubg|559|3
+## 插入代码片段
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+	printf("test code...\n");
+	return 0;
+}
+```
+

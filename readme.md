@@ -94,5 +94,7 @@ int main()
 [bilibili](https://www.bilibili.com "跳转到B站")
 
 ## 文章中插入图片
-**如果本地资源的图片在github无法显示，需要将本地图片生成url地址**
+**如果本地资源的图片在github无法显示，需要将本地图片生成url地址**<br>
 ![本地壁纸](C://Users//Administrator//Desktop//wallpaper.png "本地壁纸")
+![本地壁纸](https://s2.loli.net/2022/03/10/dHu3ULmpjvbtSQs.png "本地壁纸")
+

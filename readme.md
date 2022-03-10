@@ -73,4 +73,18 @@ int main()
 	return 0;
 }
 ```
-
+```bash
+ sudo su
+ echo "输出到终端"
+ cd "path"
+```
+```c++
+	#include <iostream>
+	using namespace std;
+	int main()
+	{
+	    cout<<"输出"<<endl;
+	    system("pause");
+	    return 0;
+	}
+```

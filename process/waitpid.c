@@ -27,6 +27,7 @@ int main()
 			}
 			else if(zpid == 0)
 			{
+				//非阻塞执行程序
 				job(NULL);
 			}
 		}

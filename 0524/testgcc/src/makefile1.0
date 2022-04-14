@@ -1,0 +1,19 @@
+#version 1.0 make less time
+
+app:main.o add.o sub.o mul.o des.o
+	gcc *.o -o myapp
+
+main.o:main.c
+	gcc main.c -I../include -c
+
+add.o:add.c
+	gcc add.c -I../include -c
+
+sub.o:sub.c
+	gcc sub.c -I../include -c
+
+mul.o:mul.c
+	gcc mul.c -I../include -c
+
+des.o:des.c
+	gcc des.c -I../include -c

@@ -19,7 +19,7 @@
 
 #define DFL_CODE 5000
 
-//進程共享資源
+//进程共享资源
 typedef struct 
 {
 	int number;
@@ -29,24 +29,24 @@ typedef struct
 
 int main(void)
 {
-	//1.創建映射文件
+	//1.创建映射文件
 	int mfd = open("mmap_file",O_RDWR|O_CREAT,0664);
 	//2.拓展映射文件
 	ftruncate(mfd,sizeof(shared_t));
-	//3.內存共享映射
+	//3.内存共享映射
 	shared_t* date;
 	if((date=mmap(NULL,sizeof(shared_t),PROT_READ|PROT_WRITE,MAP_SHARED,mfd,0))==MAP_FAILED){
 		perror("mmap call failed");
 		exit(0);
 	}
-	//4.初始化共享數據,number和互斥鎖及屬性
+	//4.初始化共享数据,number和锁及属性
 	date->number = 0;
 	pthread_mutexattr_t attr;
 	pthread_mutexattr_init(&attr);
 	pthread_mutexattr_setpshared(&attr,PTHREAD_PROCESS_SHARED);
 	pthread_mutex_init(&date->lock,&attr);
 
-	//5.進程創建
+	//5.进程创建
 	pid_t pid;
 	pid = fork();
 	if(pid > 0){
@@ -67,7 +67,7 @@ int main(void)
 		perror("fork call failed");
 		exit(0);
 	}
-	//銷毀釋放資源
+	//销毁释放资源
 	pthread_mutexattr_destroy(&attr);
 	pthread_mutex_destroy(&date->lock);
 	munmap(date,sizeof(shared_t));
